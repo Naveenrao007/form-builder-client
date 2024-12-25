@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--inter);
+}
+
+.LandingPageContainer {
+  background-color: rgba(18, 18, 18, 1);
+  padding: 0px;
+  margin: 0px;
+}
+.headerPadding{
+  padding: 1rem 4rem;
+}
+
+.logo {
+  width: 35px;
+  height: 35px;
+  margin-right: 1rem;
+}
+.primarybtn {
+  padding: 0.5rem 1rem;
+  border: 2px solid rgba(109, 154, 255, 1);
+  border-radius: 8px;
+  font-size: 18px;
+}
+
+.formBot {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  margin-left: 1rem;
+}
+
+.bg_green {
+  background-color: rgba(26, 95, 255, 1);
+}
+.SignIn {
+  color: rgba(126, 166, 255, 1);
+  background-color: rgba(18, 18, 18, 1);
+  margin-right: 1rem;
+}
+.ContainerImg {
+  width: 100%;
+  height: auto;
+ 
+  object-fit: contain;
+  display: flex;
+}
