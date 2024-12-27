@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--inter);
+}
+
+.inputSignIn {
+  background: #000;
+  color: rgba(99, 99, 100, 1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 0.5rem 1.5rem;
+  outline: none;
+}
+.SignUpContainer {
+  min-height: 100vh;
+  display: flex;
+}
+.SignUpLastImg {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 20vw;
+}
+.primarybtn {
+  padding: 0.7rem 1rem;
+  background-color: rgba(26, 95, 255, 1);
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px 0px rgba(233, 68, 75, 0.25);
+  width: 100%;
+  font-size: 18px;
+}
+.GoogleIconDiv {
+  background-color: antiquewhite;
+  border-radius: 50%;
+  display: flex;
+  padding: 0.25rem;
+  justify-content: center;
+}
+.GoogleIconDiv > img {
+  width: 20px;
+  height: 20px;
+}
+
+.SignInInputfields {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--poppins);
+  gap: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -47,7 +47,7 @@ head {
 .bg-black {
   background-color: var(--primary-color);
 }
-.bg-white    {
+.bg-white {
   background-color: var(--secondary-color);
 }
 .bgColorBlack {
@@ -260,8 +260,8 @@ head {
 .mrCommon2 {
   margin: 0rem 2rem;
 }
-.pdtop1rem{
-  padding-top: 1rem; 
+.pdtop1rem {
+  padding-top: 1rem;
 }
 .h-full {
   height: 100%;
@@ -277,6 +277,9 @@ head {
 }
 .width60per {
   width: 60%;
+}
+.width50per {
+  width: 50%;
 }
 .width40per {
   width: 40%;
@@ -320,4 +323,7 @@ head {
 }
 .bordertop {
   border-top: 1px solid rgba(0, 0, 0, 0.11);
+}
+.backtn{
+  padding: 4rem 0rem 2rem 7.5rem;
 }

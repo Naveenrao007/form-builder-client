@@ -11,9 +11,9 @@ import Section5 from "../../assets/images/Section5.png"
 import Section6 from "../../assets/images/Section6.png"
 import Section7 from "../../assets/images/Section7.png"
 import Footer from '../Footer/Footer'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 function LandingPage() {
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
     return (
         <div className={style.LandingPageContainer}  >
             <div className={`flex jcsb alineItemCenter ${style.headerPadding}`}>
@@ -22,14 +22,14 @@ function LandingPage() {
                     <p className={`white ${style.formBot}`}>FormBot</p>
                 </div>
                 <div>
-                    <button className={`cp  fw700 ${style.primarybtn} ${style.SignIn}`}>SingIn</button>
+                    <button className={`cp  fw700 ${style.primarybtn} ${style.SignIn}`} onClick={() => navigate("/signin")}>SingIn</button>
                     <button className={`cp white  fw700 ${style.primarybtn} ${style.bg_green}`}>Create a FromBot</button>
                 </div>
             </div>
             <div >
                 <img className={style.ContainerImg} src={Container} alt="LandingPageImg1" />
             </div>
-            <div >
+            {/* <div >
                 <img className={style.ContainerImg} src={LandingPageImg2} alt="LandingPageImg2" />
             </div>
             <div >
@@ -52,7 +52,7 @@ function LandingPage() {
             </div>
             <div>
                 <img className={style.ContainerImg} src={Section7} alt="Section7" />
-            </div>
+            </div> */}
             <div >
                 <Footer />
             </div>

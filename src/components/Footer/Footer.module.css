@@ -2,15 +2,23 @@
   margin: 0;
   padding: 0;
   font-family: var(--inter);
+  box-sizing: border-box;
 }
-.Footer_bgColor{
+.Footer_bgColor {
   background-color: rgba(23, 25, 35, 1);
 }
 .FooterContainer {
   display: flex;
   justify-content: space-between;
   background-color: rgba(23, 25, 35, 1);
- padding: 1rem 2rem;
- width: 80%;
- margin: 0px auto;
+  padding: 1rem 2rem;
+  width: 65%;
+  margin: 0px auto;
+}
+
+.footerLinks {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0rem;
 }
