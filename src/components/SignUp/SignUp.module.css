@@ -2,19 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--inter);
+  font-family: var(--poppins);
 }
 
 .inputSignIn {
-    background: #000;
+  background: #000;
   color: rgba(99, 99, 100, 1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+ 
   border-radius: 12px;
   padding: 0.5rem 1.5rem;
   outline: none;
 }
 .SignUpContainer {
- min-height:  100vh;
+  min-height: 100vh;
   display: flex;
 }
 .SignUpLastImg {
@@ -42,11 +42,21 @@
   height: 18px;
 }
 .SignUpinputfields {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    font-family: var(--poppins);
-    gap: 1rem;
-    font-size: 14px;
-    font-weight: 500;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--poppins);
+  gap: 1rem;
+  font-size: 14px;
+  font-weight: 500;
+}
+.errorText {
+  color: rgba(82, 34, 36, 1);
+  font-size: 14px;
+  margin-top: 0.5rem;
+}
+input:-webkit-autofill {
+ 
+    -webkit-box-shadow: 0 0 0px 1000px rgb(0, 0, 0) inset !important;
+    -webkit-text-fill-color: rgba(99, 99, 100, 1) !important;
   }

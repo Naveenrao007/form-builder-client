@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+.HomeContainer {
+  background: #000;
+  min-height: 100vh;
+ 
+}
+.CreateFolderDiv {
+  background-color: rgba(255, 255, 255, 0.08);
+  display: inline-flex;
+  padding: 0.4rem 0.7rem;
+  gap: 0.5rem;
+  border-radius: 6px;
+}
+.typeBotContainer {
+  display: inline-flex;
+  flex-direction: column;
+  /* padding: 15vh 2vw; */
+  height: 13rem;
+  padding: 0rem 2rem;
+ justify-content: center;
+ gap: 3rem;
+ margin-top: 1rem;
+  align-items: center;
+  border-radius: 6px;
+  background-color: var(--blue-color1);
+}
+.typeBotContainer > img {
+  width: 40px;
+  height: 40px;
+}

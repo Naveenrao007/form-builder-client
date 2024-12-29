@@ -8,7 +8,7 @@ import { allFiles } from "./components";
 
 
 function App() {
-  const {LandingPage,  SignIn, SignUp } =
+  const {LandingPage,  SignIn, SignUp ,Home} =
     allFiles;
   return (
     <MyProvider>
@@ -19,12 +19,8 @@ function App() {
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/" element={<LandingPage />} />
-            {/* <Route path="/profile" element={<Profile />} />
-            <Route path="/product" element={<Product />} />
-            <Route path="/checkout" element={<Checkout />} />
-            <Route path="/payment" element={<Payment />} />
-            <Route path="/final" element={<Order />} />
-            <Route path="/address" element={<Address />} /> */}
+            <Route path="/home" element={<Home/>} />
+          
           </Routes>
         </main>
         {/* <Footer /> */}

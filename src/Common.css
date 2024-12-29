@@ -4,7 +4,7 @@
 :root {
   --primary-color: #000000;
   --secondary-color: rgba(255, 255, 255, 1);
-  --green-color1: rgba(26, 95, 255, 1);
+  --blue-color1: rgba(26, 95, 255, 1);
   --green-color: #028643;
   --text-color: #333;
   --text-footer-heading: #03081f;
@@ -55,6 +55,12 @@ head {
 }
 .textyellow {
   color: var(--text-yellow-color);
+}
+.red {
+  color: rgba(255, 65, 65, 1);
+}
+.blue {
+  color: var(--blue-color1);
 }
 .underline {
   text-decoration: underline;
@@ -275,6 +281,9 @@ head {
 .width80per {
   width: 80%;
 }
+.width70per {
+  width: 70%;
+}
 .width60per {
   width: 60%;
 }
@@ -289,6 +298,9 @@ head {
 }
 .pdr1rem {
   padding-right: 1rem;
+}
+.pdtop2rem {
+  padding-top: 2rem;
 }
 .margin2rem {
   width: 95%;
@@ -318,12 +330,24 @@ head {
   height: 20px;
 }
 
-.borderBtm {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.11);
+.Border {
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
-.bordertop {
-  border-top: 1px solid rgba(0, 0, 0, 0.11);
+.errorBorder {
+  border: 1px solid rgba(255, 39, 39, 0.5);
 }
-.backtn{
+.backtn {
   padding: 4rem 0rem 2rem 7.5rem;
+}
+.hidden {
+  visibility: hidden;
+}
+.none {
+  display: none;
+}
+.block {
+  display: block;
+}
+.floatRight{
+  float: right;
 }
