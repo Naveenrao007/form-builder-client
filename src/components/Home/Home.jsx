@@ -3,17 +3,41 @@ import CreateFolderPng from "../../assets/icons/createFolder.png"
 import plusSign from "../../assets/icons/plus.png"
 import style from "./Home.module.css"
 import Header from '../Header/Header'
-import Sharemodel from '../models/ShareModel/Sharemodel'
 import CreateFolder from '../models/CreateFolder/CreateFolder'
+import { createDirectory } from '../../Service/Dashboard'
+import { toast } from 'react-toastify'
 
 function Home() {
     const [createFolderIsOpen, setCreateFolderIsOpen] = useState(false);
-  
+
     const handleOpen = () => {
         setCreateFolderIsOpen(true)
     }
-    const handleSave = (data) => {
-        console.log(data);
+    const handleFolderSave = (data) => {
+        const dataObj = { name: data, type: "folder" }
+
+        const response = createDirectory(dataObj)
+console.log("err",response.error);
+console.log("d");
+
+       
+
+        if (response.status === 400) {
+            toast.error(response.error.message, {
+                autoClose: 1400,
+            });
+        } else if (response.status === 201) {
+
+
+            toast.success(response.data.message, { autoClose: 1200 });
+
+        } else if (response.status === 500) {
+
+            toast.error("Internal server error");
+        } else if (response.status === 404) {
+            toast.error("Url is incorrect");
+        }
+
 
     }
     return (
@@ -40,9 +64,9 @@ function Home() {
             <CreateFolder
                 isOpen={createFolderIsOpen}
                 onClose={() => setCreateFolderIsOpen(false)}
-                onSave={handleSave}
+                onSave={handleFolderSave}
             />
-            
+
         </div>
     )
 }

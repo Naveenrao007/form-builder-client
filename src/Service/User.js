@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const register = async (data) => {
+
     console.log(data);
     
     try {
