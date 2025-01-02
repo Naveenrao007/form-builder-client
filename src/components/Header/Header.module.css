@@ -11,6 +11,14 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  position: relative;
+}
+.userContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70%;
+  position: relative;
 }
 .rightDiv {
   display: flex;
@@ -19,9 +27,12 @@
 }
 .userDetailsContainer {
   border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--secondary-color);
   padding: 0.25rem 1rem;
-  border-radius: 8px;
+
+  border-radius: 8px 8px 0px 0px;
   gap: 0.5rem;
+  justify-content: space-between;
   display: flex;
 }
 .switch {
@@ -90,4 +101,25 @@ input:checked + .slider:before {
   color: #ffffff;
   cursor: pointer;
   border-radius: 6px;
+}
+
+.dropdownContainer {
+  background: rgba(29, 29, 29, 1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: none;
+  border-radius: 0px 0px 6px 1px;
+  width: 40%;
+  top: 2.1rem;
+  z-index: 2;
+  position: absolute;
+}
+.logout {
+  color: rgba(255, 165, 76, 1);
+  font-size: 16px;
+  font-weight: 600;
+}
+.setting {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 16px;
+  font-weight: 600;
 }

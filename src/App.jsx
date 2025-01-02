@@ -8,7 +8,7 @@ import { allFiles } from "./components";
 
 
 function App() {
-  const {LandingPage,  SignIn, SignUp ,Home} =
+  const {LandingPage,  SignIn, SignUp ,Home,Settings} =
     allFiles;
   return (
     <MyProvider>
@@ -20,6 +20,7 @@ function App() {
             <Route path="/signup" element={<SignUp />} />
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home/>} />
+            <Route path="/setting" element={<Settings/>} />
           
           </Routes>
         </main>

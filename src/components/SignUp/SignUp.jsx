@@ -54,15 +54,14 @@ function SignUp() {
         
           const response = await register(dataToSend);
           console.log(response);
-          // 
+            console.log(response);
+            
           if (response.status === 400) {
             toast.error(response.error.message, {
               autoClose: 1400,
     
             });
-            setTimeout(() => {
-              window.location.href = "/signin";
-            }, 1900);
+           
           } else if (response.status === 201) {
             toast.success(response.data.message, {
               autoClose: 2000,

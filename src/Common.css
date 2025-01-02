@@ -4,21 +4,9 @@
 :root {
   --primary-color: #000000;
   --secondary-color: rgba(255, 255, 255, 1);
+  --gray-color:rgba(130, 130, 130, 1);
   --blue-color1: rgba(26, 95, 255, 1);
   --green-color: #028643;
-  --text-color: #333;
-  --text-footer-heading: #03081f;
-  --text-yellow-color: #fc8a06;
-  --font-small: 0.875rem;
-  --font-medium: 1rem;
-  --font-large: 1.25rem;
-  --spacing-small: 8px;
-  --spacing-medium: 16px;
-  --spacing-large: 24px;
-  --border-radius-sm: 6px;
-  --border-radius-md: 8px;
-  --border-radius-bg: 12px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --inter: "Inter", sans-serif;
   --open-sans: "Open Sans", sans-serif;
   --poppins: "Poppins", sans-serif;
@@ -56,11 +44,17 @@ head {
 .textyellow {
   color: var(--text-yellow-color);
 }
+.settingGrayColor{
+  color: var(--gray-color);
+}
 .red {
   color: rgba(255, 65, 65, 1);
 }
 .blue {
   color: var(--blue-color1);
+}
+.dropdownBg {
+  background-color: rgba(29, 29, 29, 1);
 }
 .underline {
   text-decoration: underline;
@@ -348,6 +342,21 @@ head {
 .block {
   display: block;
 }
-.floatRight{
+.floatRight {
   float: right;
+}
+.useroptins {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.5rem 1rem;
+}
+.primary-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 0px;
+  border-radius: 55px;
+  width: 100%;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 28px;
 }

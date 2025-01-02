@@ -7,20 +7,27 @@ function Sharemodel({ isOpen, onClose, onSave }) {
     const [error, setError] = useState("")
     const handleInvite = () => {
         if (!emailId || !/\S+@\S+\.\S+/.test(emailId)) {
-            setError ("Enter a valid email address.");
+            setError("Enter a valid email address.");
+        } else {
+
+            const shareData = {
+                email: emailId,
+                permission: isEdit
+            }
+            onSave(shareData)
         }
 
     }
-    
+
     const handleEmailInput = (e) => {
-       setEmailId(e.target.value)
-       setError("")
+        setEmailId(e.target.value)
+        setError("")
     }
     const handleClose = () => {
-      
+
         setError("");
-       onClose()
-       
+        onClose()
+
     };
     return (isOpen && (
 

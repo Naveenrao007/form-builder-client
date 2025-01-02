@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .modalOverlay {
+    position: fixed;
+    top: -98px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background-color: rgb(0, 0, 0);
+    padding: 20px;
+    border: 1px solid rgba(24, 24, 27, 1);
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  .ModalHeading {
+    font-size: 27px;
+    line-height: 41px;
+    font-weight: 500;
+  }
+  .inputCreateFolder {
+    background: rgba(31, 31, 35, 1);
+    color:rgb(139 137 137);
+    border: none;
+    font-size: 20px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 0.8rem 0.5rem;
+    outline: none;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .buttonContainer > button {
+    border: none;
+    outline: none;
+    font-size: 24px;
+    line-height: 41px;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .buttonContainer > span {
+    border: 1px solid rgba(71, 71, 74, 1);
+    font-size: 16px;
+  }
+  .errorText {
+    color: rgb(194, 39, 44);
+    font-size: 14px;
+    margin-top: 0.5rem;
+  }
