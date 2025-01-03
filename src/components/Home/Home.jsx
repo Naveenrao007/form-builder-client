@@ -9,7 +9,7 @@ import DeleteModel from '../models/DeleteModel/DeleteModel';
 import { createDirectory, getDirectory, deleteDirectory } from '../../Service/Dashboard';
 import { toast } from 'react-toastify';
 import { groupDirectoriesByOwner } from "../../Helper/helper"
-import { useNavigate } from 'react-router-dom';
+import { data, useNavigate } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 import { useContext } from 'react';
 import { MyContext } from '../../context/Context';
@@ -128,18 +128,37 @@ function Home() {
                     navigate("/signin");
                 }
             } else if (response.status === 200) {
-                const directories = response.data.ownedDirectories;
-                setContextData(response.data);
-                const shareUsersData = response.data.sharedByUsers[0].directories.map((item) => item.owner
-                );
+                const directories = response?.data?.ownedDirectories || [];
+                setContextData(response?.data || {});
 
-                const shareUserData = shareUsersData.filter(
-                    (item, index, arr) => arr.findIndex(i => i.id === item.id) === index
-                );
-                shareUserData.push(response.data.user)
+                const sharedUsers = response?.data?.sharedByUsers || [];
+                if (sharedUsers.length > 0) {
+                    const shareUsersData = sharedUsers[0]?.directories?.map((item) => item.owner) || [];
+                    const shareUserData = shareUsersData.filter(
+                        (item, index, arr) => arr.findIndex(i => i?.id === item?.id) === index
+                    );
 
-                setContextData((prev) => ({ ...prev, sharedUser: shareUserData }))
+                  
+                    if (response?.data?.user) {
+                        shareUserData.push(response.data.user);
+                    }
+
+                    const rawdata = await groupDirectoriesByOwner(sharedUsers[0]?.directories || []);
+                    if (response?.data?.user?.id) {
+                        rawdata[response.data.user.id] = directories;
+                    }
+
+                    setContextData((prev) => ({
+                        ...prev,
+                        sharedUser: shareUserData,
+                        usersDirs: rawdata,
+                    }));
+                }
+
                 updateDirs(directories);
+                setIsLoading(false);
+
+
 
             }
         } catch (error) {
@@ -151,25 +170,26 @@ function Home() {
 
     useEffect(() => {
         handleHome();
-        if (contextdata) {
-            setIsLoading(false)
-            handleUser()
-        }
+        handleUser()
+
     }, []);
 
 
     const handleUser = async () => {
-        const rawdata = await groupDirectoriesByOwner(contextdata?.sharedByUsers[0]?.directories);
+        const rawdata = await groupDirectoriesByOwner(contextdata.sharedByUsers[0].directories);
         rawdata[contextdata.user.id] = contextdata.ownedDirectories;
         const updatedContext = { ...contextdata, usersDirs: rawdata };
         setContextData(updatedContext);
     }
 
-
+    const handleChangeuser = (data) => {
+        const showDir = contextdata.usersDirs[data.id] || contextdata?.ownedDirectories
+        splitDirsByType(showDir)
+    }
 
     return isLoading ? (<Loading />) : (
         <div>
-            <Header />
+            <Header changeUser={handleChangeuser} />
             <div className={style.HomeContainer}>
                 <div className='width70per m-auto'>
                     <div className={style.foldersParentContainer}>

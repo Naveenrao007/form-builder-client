@@ -1,6 +1,6 @@
 import axios from "axios";
 import { addTokenToHeader } from "../Helper/Header";
-
+import { toast } from "react-toastify";
 const getDirectory = async () => {
   const headers = addTokenToHeader({ headers: {} });
   try {
@@ -61,8 +61,8 @@ const shareDirectory = async (data) => {
         headers,
       }
     );
-   
-    
+
+
     return {
       data: res,
       status: res.status,
@@ -88,8 +88,8 @@ const deleteDirectory = async (data) => {
         data,
       }
     );
-   
-    
+
+
     return {
       data: res,
       status: res.status,
@@ -105,6 +105,32 @@ const deleteDirectory = async (data) => {
     };
   }
 };
+const generateLink = async (data) => {
+  const headers = addTokenToHeader({ headers: {} });
+  console.log(data);
+  
+  try {
+
+    const res = await axios.post(
+      `${import.meta.env.VITE_BaseUrl}/dashboard/generatesharelink`,
+      {permission:data},
+      { headers }
+    );
+    console.log("resssss",res);
+    
+    if (res.status === 200) {
+      const shareLink = res.data.shareLink;
+     
+      navigator.clipboard.writeText(shareLink);
+      toast.success(`Link copied to clipboard`);
+    } else {
+      toast.error(res.data.message || "Failed to generate link");
+    }
+  } catch (err) {
+    console.error("Error generating share link:", err);
+    toast.error("Something went wrong");
+  }
+}
 
 
-export { createDirectory, getDirectory,shareDirectory, deleteDirectory };
+export { createDirectory, getDirectory, shareDirectory, generateLink, deleteDirectory };

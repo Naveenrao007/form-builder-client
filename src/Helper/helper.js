@@ -1,5 +1,5 @@
 export const groupDirectoriesByOwner = (directories) => {
-    console.log("directories", directories);
+  
 
     return directories?.reduce((result, dir) => {
         const userId = dir.owner.id;

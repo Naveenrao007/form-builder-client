@@ -48,9 +48,17 @@ function SignIn() {
     if (validate()) {
       const response = await login(signIndata);
       if (response.status === 400) {
-        toast.error(response.error.message, {
-          autoClose: 1400,
-        });
+        if(response.error.message === "User not found"){
+          toast.error(response.error.message, {
+            autoClose: 1400,
+          });
+          navigate("/signup")
+        }else{
+          toast.error(response.error.message, {
+            autoClose: 1400,
+          });  
+        }
+        
 
       } else if (response.status === 200) {
         localStorage.setItem("token", response.data.token);

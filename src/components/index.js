@@ -5,5 +5,6 @@ import Home from "./Home/Home";
 import Header from "./Header/Header";
 import Loading from "./Loading/Loading"
 import Settings from "./settings/Settings";
+import ShareDir from "./ShareDir/ShareDir";
 
-export const allFiles = { Loading, LandingPage, SignIn, SignUp, Home, Header, Settings }
+export const allFiles = { Loading, LandingPage, SignIn, SignUp, Home, Header, Settings,ShareDir }

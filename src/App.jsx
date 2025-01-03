@@ -8,7 +8,7 @@ import { allFiles } from "./components";
 
 
 function App() {
-  const {LandingPage,  SignIn, SignUp ,Home,Settings} =
+  const {LandingPage,  SignIn, SignUp ,Home,Settings,ShareDir} =
     allFiles;
   return (
     <MyProvider>
@@ -21,6 +21,7 @@ function App() {
             <Route path="/" element={<LandingPage />} />
             <Route path="/home" element={<Home/>} />
             <Route path="/setting" element={<Settings/>} />
+            <Route path="/sharedirectory" element={<ShareDir/>} />
           
           </Routes>
         </main>

@@ -10,7 +10,7 @@ import LogoutModel from "../models/LogoutModel/LogoutModel";
 import { shareDirectory } from "../../Service/Dashboard";
 import { toast } from "react-toastify";
 
-function Header() {
+function Header({changeUser}) {
   const [darkmode, setDarkmode] = useState(true);
   const [ShareIsOpen, setShareIsOpen] = useState(false);
   const [dropdownIsOpen, setdropdownIsOpen] = useState(false);
@@ -21,8 +21,9 @@ function Header() {
 
 
   const handleDir = (item) => {
-    setUserDirName(item)
+    setUserDirName(item.name)
     setdropdownIsOpen(false)
+    changeUser(item)
   }
 
   const navigate = useNavigate();
@@ -103,7 +104,7 @@ function Header() {
               {dropdownIsOpen && (
                 <div className={style.dropdownContainer}>
                   <div>{
-                    contextdata?.sharedUser?.map((item) => (<div key={item.id} className="useroptins white  cp" onClick={() => handleDir(item.name)}>{item.name}</div>
+                    contextdata?.sharedUser?.map((item) => (<div key={item.id} className="useroptins white  cp" onClick={() => handleDir(item)}>{item.name}</div>
                     ))
 
                   }
