@@ -4,7 +4,7 @@ import userImg from "../../assets/icons/user.png";
 import emailImg from "../../assets/icons/email.png"
 import LogoutImg from "../../assets/icons/Logout.png"
 import openEyeImg from "../../assets/icons/openEye.png";
-import closedEyeImg from "../../assets/Icons/closedEye.png";
+import closedEyeImg from "../../assets/icons/closedEye.png";
 import passwordImg from "../../assets/Icons/password.png";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
