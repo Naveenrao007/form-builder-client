@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./Settings.module.css";
 import userImg from "../../assets/icons/user.png";
-import emailImg from "../../assets/Icons/email.png";
+import emailImg from "../../assets/icons/email.png"
 import openEyeImg from "../../assets/Icons/eye.png";
 import LogoutImg from "../../assets/icons/Logout.png"
 import closedEyeImg from "../../assets/Icons/closedEye.png";
